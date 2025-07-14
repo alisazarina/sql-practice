@@ -164,6 +164,7 @@ WHERE condition(s)
 ORDER BY column, … ASC/DESC
 LIMIT num_limit OFFSET num_offset;
 ```
+## Exercises
 1. Find the domestic and international sales for each movie
 ```
 SELECT title, domestic_sales, international_sales
