@@ -225,6 +225,21 @@ LEFT JOIN employees
 ```
 
 # Lesson 8 : A short note on NULLs
+- An alternative to **NULL** values in your database is to have data-type appropriate default values, like 0 for numerical data, empty strings for text data, etc.
+- But if your database needs to store incomplete data, then **NULL** values can be appropriate if the default values will skew later analysis (for example, when taking averages of numerical data).
+  
+- Sometimes, it's also not possible to avoid **NULL** values, as we saw in the last lesson when outer-joining two tables with asymmetric data. In these cases, you can test a column for NULL values in a **WHERE** clause by using either the **IS NULL** or **IS NOT NULL** constraint.
+- Template of **Complete Select Query**:
+```
+Select query with constraints on NULL values
+SELECT column, another_column, …
+FROM mytable
+WHERE column IS/IS NOT NULL
+AND/OR another_condition
+AND/OR …;
+```
+
+## Exercises
 1. Find the name and role of all employees who have not been assigned to a building
 ```
 SELECT name, role FROM employees WHERE building IS NULL;
