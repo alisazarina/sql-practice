@@ -152,9 +152,9 @@ LIMIT 2 OFFSET 2;
 ```
 
 # Lesson 6 : Multi-table queries with JOINs
-- Mentions Database Normalization (minimizes duplicate data in any single table).
+- Mentions **Database Normalization** (minimizes duplicate data in any single table).
 - Allows for data in the database to grow independently of each other (ie. Types of car engines can grow independent of each type of car).
-- Template (using INNER JOIN):
+- Template (using **INNER JOIN**):
 ```
 SELECT column, another_table_column, …
 FROM mytable
@@ -190,9 +190,9 @@ ORDER BY rating DESC;
 ```
 
 # Lesson 7 : OUTER JOINs
-- Depending on how you want to analyze the data, the INNER JOIN we used last lesson might not be sufficient because the resulting table only contains data that belongs in both of the tables.
-- If the two tables have asymmetric data, which can easily happen when data is entered in different stages, then we would have to use a LEFT JOIN, RIGHT JOIN or FULL JOIN instead to ensure that the data you need is not left out of the results.
-- The following snippet shows a Select query with LEFT/RIGHT/FULL JOINs on multiple tables:
+- Depending on how you want to analyze the data, the **INNER JOIN** we used last lesson might not be sufficient because the resulting table only contains data that belongs in both of the tables.
+- If the two tables have asymmetric data, which can easily happen when data is entered in different stages, then we would have to use a **LEFT JOIN**, **RIGHT JOIN** or **FULL JOIN** instead to ensure that the data you need is not left out of the results.
+- Template Select Query with **LEFT/RIGHT/FULL JOINs** on multiple tables:
 ```
 SELECT column, another_column, …
 FROM mytable
@@ -202,13 +202,12 @@ WHERE condition(s)
 ORDER BY column, … ASC/DESC
 LIMIT num_limit OFFSET num_offset;
 ```
-- Like the INNER JOIN these three new joins have to specify which column to join the data on.
-- When joining table A to table B, a LEFT JOIN simply includes rows from A regardless of whether a matching row is found in B. The RIGHT JOIN is the same, but reversed, keeping rows in B regardless of whether a match is found in A.
-- Finally, a FULL JOIN simply means that rows from both tables are kept, regardless of whether a matching row exists in the other table.
+- Like the **INNER JOIN** these three new joins have to specify which column to join the data on.
+- When joining table A to table B, a **LEFT JOIN** simply includes rows from A regardless of whether a matching row is found in B.
+- The **RIGHT JOIN** is the same, but reversed, keeping rows in B regardless of whether a match is found in A.
+- Finally, a **FULL JOIN** simply means that rows from both tables are kept, regardless of whether a matching row exists in the other table.
 
 ## Exercises
-- In this exercise, you are going to be working with a new table which stores fictional data about Employees in the film studio and their assigned office Buildings. Some of the buildings are new, so they don't have any employees in them yet, but we need to find some information about them regardless.
-- Note: Since the browser SQL database is somewhat limited, only the LEFT JOIN is supported in the exercise below.
 1. Find the list of all buildings that have employees
 ```
 SELECT DISTINCT building FROM employees;
